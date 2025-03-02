@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main.css'%}">
     {% block title%}
         <title>FinTracker</title>
     {% endblock %}
@@ -18,6 +19,9 @@
         <ul class="header-navigation__list navigation__list">
             <img class="Logo" src="/static/image/Logo.png" alt="FinTracker Logo">
             <h1 class="h1">FinTracker</h1>
+            <li class="header-navigation__item navigation__item">
+                <a class="header-navigation__link navigation__link" href="/main">Головна Панель</a>
+            </li>
             <li class="header-navigation__item navigation__item">
                 <a class="header-navigation__link navigation__link" href="#">Рахунки</a>
             </li>
@@ -38,6 +42,12 @@
             </div>
         </ul>
     </div>
+    {% block content %}
+    <div class="money_balance">
+        <img width="24px" height="24px" src="/static/image/cash.png" alt="Cash Logo">
+        <div class="money">Гроші</div>
+    </div>
+    {% endblock %}
     
 </body>
 </html>

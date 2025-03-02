@@ -16,6 +16,10 @@
     outline: none;
   }
 
+  :root{
+    --white: #fff;
+  }
+
   html{
     scroll-behavior: smooth;
   }
