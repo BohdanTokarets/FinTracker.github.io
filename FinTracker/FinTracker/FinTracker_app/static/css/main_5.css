@@ -151,9 +151,56 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: bold;
   width: 300px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 25px;
+  margin-left: 10px;
 }
+
 .icon {
   width: 30px;
   height: 30px;
   margin-right: 10px;
+}
+
+.calendar{
+  width: 380px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #6f97c4;
+  border-radius: 10px;
+  box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.header button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: #6f97c4;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day{
+  text-align: center;
+  padding: 5px;
+  color: #d4d7db;
+  font-weight: 500;
 }
