@@ -48,13 +48,17 @@ nextBtn.addEventListener('click', () =>{
     UpdateCalendar();
 })
 
-UpdateCalendar();
+
+// UpdateCalendar();
 
 
-// Calendar Show
-const header = document.getElementById('header');
-const days = document.querySelector("days");
+// // Calendar Show
+// const header = document.getElementById('header');
+// const days = document.querySelector("days");
 
-header.addEventListener('click', function(){
-    datesElement.style.display = "grid";
-})
+// header.addEventListener('click', function(){
+//     datesElement.style.display = "grid";
+// })
+// =======
+// UpdateCalendar();
+
