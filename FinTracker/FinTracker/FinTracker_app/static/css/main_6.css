@@ -170,7 +170,9 @@ h1,h2,h3,h4,h5,h6 {
   background-color: #6f97c4;
   border-radius: 10px;
   box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
   color: #fff;
+  margin: 20px auto;
 }
 
 .header{
@@ -193,6 +195,12 @@ h1,h2,h3,h4,h5,h6 {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
+.monthYear{
+  text-align: center;
+  font-weight: 600;
+  width: 150px;
+}
+
 .days{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -203,4 +211,44 @@ h1,h2,h3,h4,h5,h6 {
   padding: 5px;
   color: #d4d7db;
   font-weight: 500;
+  display: none;
+}
+
+.dates {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  display: none;
+}
+
+.display{
+  display: grid;
+}
+
+.date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s;
+}
+
+.date:hover,
+.date.active{
+  background: #ff5689;
+  color: #fff;
+}
+
+.date.inactive{
+  display: none;
+}
+
+.display{
+  display: block;
 }
