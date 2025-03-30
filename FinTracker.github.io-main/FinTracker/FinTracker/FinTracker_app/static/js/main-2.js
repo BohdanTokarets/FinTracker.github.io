@@ -49,16 +49,15 @@ nextBtn.addEventListener('click', () =>{
 })
 
 
-// UpdateCalendar();
+UpdateCalendar();
 
 
-// // Calendar Show
-// const header = document.getElementById('header');
-// const days = document.querySelector("days");
+// Calendar Show
+const header = document.getElementById('header');
+const days = document.getElementById("days");
 
-// header.addEventListener('click', function(){
-//     datesElement.style.display = "grid";
-// })
-// =======
-// UpdateCalendar();
+header.addEventListener('click', () =>{
+    datesElement.style.display = "grid";
+    days.style.display = "grid";
+})
 
