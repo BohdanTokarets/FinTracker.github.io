@@ -245,3 +245,59 @@ h1,h2,h3,h4,h5,h6 {
 .date.inactive{
   display: none;
 }
+
+.score-add{
+  width: 20%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+
+.button1{
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.715rem;
+  padding: 15px 20px;
+  outline: none;
+  border: 2px dashed #e5e9ed;
+  color: #7f8fa4;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .1s ease, color .1s ease;
+}
+
+.button1:hover{
+  color: #007aff;
+  border-color: #007aff;
+}
+
+.cash-box-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+button:focus {
+  background: none;
+}
+
+.font{
+  font-size: 15px;
+}
+
+.score{
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.close_button {
+  width: 30px;
+  height: 30px;
+  color: #000000;
+}

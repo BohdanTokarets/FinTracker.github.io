@@ -55,9 +55,17 @@ UpdateCalendar();
 // Calendar Show
 const header = document.getElementById('header');
 const days = document.getElementById("days");
+const body = document.getElementById("body");
+const button1 = document.querySelector("button1");
 
 header.addEventListener('click', () =>{
     datesElement.style.display = "grid";
     days.style.display = "grid";
 })
 
+document.addEventListener('mousedown', function(e){
+    if(e.target.closest('.dates') === null){
+        datesElement.style.display = "none";
+        days.style.display = "none"
+    }
+});

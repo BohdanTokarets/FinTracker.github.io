@@ -10,16 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="{% static 'js/main-2.js' %}" defer></script>
+    <script async defer src="{% static 'js/main-3.js' %}" defer></script>
     <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
     
-    <link type="text/css" rel="stylesheet" href="{% static 'css/main_6.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main_1.css'%}">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style_1.css'%}">
     {% block title%}
         <title>FinTracker</title>
     {% endblock %}
 </head>
-<body>
+<body id="body">
     <div class="navbar">
         <ul class="header-navigation__list navigation__list">
             <img class="Logo" src="/static/image/Logo.png" alt="FinTracker Logo">
@@ -48,11 +48,21 @@
         </ul>
     </div>
     {% block content %}
-    <div class="cash-box">
-        <img src="/static/image/cash.png" color="white" alt="Coins" class="icon">
-        <div>
-            <div>Готівка</div>
-            <div>5 000,00 грн</div>
+    <div class="cash-box-div">
+        <div class="cash-box">
+            <img src="/static/image/cash.png" color="white" alt="Coins" class="icon">
+            <div>
+                <div class="font">Готівка</div>
+                <div class="font">5 000,00 грн</div>
+            </div>
+        </div>
+        <div class="score-add">
+            <button class="button1" type="button">
+                <div>
+                    ＋&nbsp;
+                    Додати рахунок
+                </div>
+            </button>
         </div>
     </div>
     <div class="calendar">
@@ -75,6 +85,23 @@
                 <div class="day">Нд</div>
             </div>
             <div class="dates" id="dates"></div>
+    </div>
+
+    <div class="add_score_visible_conatiner">
+        <div class="header_conatiner">
+            Додати рахунок
+            <span><img src="/static/image/close-icon.png" class="close_button" alt="Close button from window"></span>
+        </div>
+        <div class="content_conatiner">
+            <div class="main_modal_choose">
+                <div class="main_modal_separator">
+                    <div class="bank_synchronization-card"></div>
+                    <div class="import-card"></div>
+                    <div class="manual_imput-card"></div>
+                    <div class="investment-card"></div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endblock %}
     
