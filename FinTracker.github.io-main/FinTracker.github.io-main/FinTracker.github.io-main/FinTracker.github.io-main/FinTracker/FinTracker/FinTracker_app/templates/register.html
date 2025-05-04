@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Реєстрація</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn waves-effect waves-light" type="submit">Підтвердити</button>
+    </form>
+    <p>Якщо ви вже зареєстровані, зареєструйтеся тут:
+        <a href="/login">тут</a>
+    </p>
+    <p>{{error}}</p>
+</div>
+{% endblock %}
