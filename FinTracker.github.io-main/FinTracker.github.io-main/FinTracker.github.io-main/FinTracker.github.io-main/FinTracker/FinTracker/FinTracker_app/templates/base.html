@@ -13,7 +13,7 @@
     <script async defer src="{% static 'js/main-3.js' %}" defer></script>
     <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
     
-    <link type="text/css" rel="stylesheet" href="{% static 'css/main_1.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main.css'%}">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style_1.css'%}">
     {% block title%}
         <title>FinTracker</title>
@@ -87,7 +87,7 @@
             <div class="dates" id="dates"></div>
     </div>
 
-    <div class="add_score_visible_conatiner">
+    <!-- <div class="ui large modal transition visible active">
         <div class="header_conatiner">
             Додати рахунок
             <span><img src="/static/image/close-icon.png" class="close_button" alt="Close button from window"></span>
@@ -95,14 +95,25 @@
         <div class="content_conatiner">
             <div class="main_modal_choose">
                 <div class="main_modal_separator">
-                    <div class="bank_synchronization-card"></div>
-                    <div class="import-card"></div>
-                    <div class="manual_imput-card"></div>
-                    <div class="investment-card"></div>
+                    <div class="bank_synchronization-card">
+                        <div class="bank_synchronization-card_image"></div>
+                        <h3 class="h3_modal">Синхронізація банку</h3>
+                        <p>Підключайте свої банківські рахунки і автоматично синхронізовуйте транзакції.</p>
+                    </div>
+                    <div class="import-card">
+                        <div class="import-card_image"></div>
+                        <h3 class="h3_modal">Імпорт</h3>
+                        <p>Завантажуйте свою історію транзакцій, імпортуючи CSV, Excel, OFX та інші файли.</p>
+                    </div>
+                    <div class="manual_imput-card">
+                        <div class="manual_imput-card_image"></div>
+                        <h3 class="h3_modal">Ручний ввід</h3>
+                        <p>Оновлюйте свій рахунок вручну. Ви можете підключити свій банк або імпортувати дані пізніше. </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     {% endblock %}
     
 </body>
