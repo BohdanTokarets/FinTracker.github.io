@@ -1,6 +1,6 @@
 const monthYearElement = document.getElementById('monthYear');
 const datesElement = document.getElementById('dates');
-const prevBtn = document.getElementById('prevBtn');
+const prevBtn = document.querySelector('.prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 let currentDate = new Date();
@@ -56,7 +56,10 @@ UpdateCalendar();
 const header = document.getElementById('header');
 const days = document.getElementById("days");
 const body = document.getElementById("body");
-const button1 = document.querySelector("button1");
+const button1 = document.querySelector(".button1");
+const ui = document.getElementById("ui");
+const close_button = document.getElementById("close_button");
+const popup = document.getElementById("popup");
 
 header.addEventListener('click', () =>{
     datesElement.style.display = "grid";
@@ -68,4 +71,16 @@ document.addEventListener('mousedown', function(e){
         datesElement.style.display = "none";
         days.style.display = "none"
     }
+});
+
+button1.addEventListener('click', () =>{
+    ui.classList.remove("non-visible");
+    ui.classList.add("visible");
+    popup.classList.remove("non-visible");
+});
+
+close_button.addEventListener('click', () =>{
+    ui.classList.add("non-visible");
+    ui.classList.remove("visible");
+    popup.classList.add("non-visible");
 });
