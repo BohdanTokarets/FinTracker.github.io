@@ -246,7 +246,7 @@ h1,h2,h3,h4,h5,h6 {
   display: none;
 }
 
-.score-add{
+ .score-add{
   width: 20%;
   padding-left: 30px;
   display: flex;
@@ -493,4 +493,4 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 

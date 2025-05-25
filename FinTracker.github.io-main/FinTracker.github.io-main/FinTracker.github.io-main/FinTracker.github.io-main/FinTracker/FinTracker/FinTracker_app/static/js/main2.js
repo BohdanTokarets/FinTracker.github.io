@@ -38,10 +38,10 @@ const UpdateCalendar = () => {
     datesElement.innerHTML = datesHTML;
 }
 
-prevBtn.addEventListener('click', () =>{
+prevBtn.addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
     UpdateCalendar();
-})
+});
 
 nextBtn.addEventListener('click', () =>{
     currentDate.setMonth(currentDate.getMonth() + 1);
@@ -53,34 +53,34 @@ UpdateCalendar();
 
 
 // Calendar Show
-const header = document.getElementById('header');
-const days = document.getElementById("days");
-const body = document.getElementById("body");
-const button1 = document.querySelector(".button1");
-const ui = document.getElementById("ui");
-const close_button = document.getElementById("close_button");
-const popup = document.getElementById("popup");
+// const header = document.getElementById('header');
+// const days = document.querySelector("days");
+// const body = document.getElementById("body");
+// const button1 = document.querySelector(".button1");
+// const ui = document.getElementById("ui");
+// const close_button = document.getElementById("close_button");
+// const popup = document.getElementById("popup");
 
-header.addEventListener('click', () =>{
-    datesElement.style.display = "grid";
-    days.style.display = "grid";
-})
+// header.addEventListener('click', () =>{
+//     datesElement.style.display = "grid";
+//     days.style.display = "grid";
+// })
 
-document.addEventListener('mousedown', function(e){
-    if(e.target.closest('.dates') === null){
-        datesElement.style.display = "none";
-        days.style.display = "none"
-    }
-});
+// document.addEventListener('mousedown', function(e){
+//     if(e.target.closest('.dates') === null){
+//         datesElement.style.display = "none";
+//         days.style.display = "none"
+//     }
+// });
 
-button1.addEventListener('click', () =>{
-    ui.classList.remove("non-visible");
-    ui.classList.add("visible");
-    popup.classList.remove("non-visible");
-});
+// button1.addEventListener('click', () =>{
+//     ui.classList.remove("non-visible");
+//     ui.classList.add("visible");
+//     popup.classList.remove("non-visible");
+// });
 
-close_button.addEventListener('click', () =>{
-    ui.classList.add("non-visible");
-    ui.classList.remove("visible");
-    popup.classList.add("non-visible");
-});
+// close_button.addEventListener('click', () =>{
+//     ui.classList.add("non-visible");
+//     ui.classList.remove("visible");
+//     popup.classList.add("non-visible");
+// });
