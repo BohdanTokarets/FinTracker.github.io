@@ -87,3 +87,25 @@ close_button.addEventListener('click', () =>{
     popup.classList.add("non-visible");
     box_plot_main.style.display = "block";
 });
+
+// Dashbord
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['1.06', '6.06', '12.06', '18.06', '24.06', '30.06'],
+    datasets: [{
+      label: 'Баланс: 5000',
+      data: [5000],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});

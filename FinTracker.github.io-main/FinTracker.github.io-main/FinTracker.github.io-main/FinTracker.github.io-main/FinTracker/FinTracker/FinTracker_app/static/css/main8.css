@@ -885,3 +885,10 @@ button:focus {
 .spidometr-2{
   margin-left: 20px;
 }
+
+.chart{
+  max-width: 300px;
+  height: 192px;
+  margin: 0 auto;
+}
+
