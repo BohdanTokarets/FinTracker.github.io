@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block title %}
+<title>Рахунки</title>
+{% endblock %}
+
+{%block content %}
+<div class="all-page">
+    <div class="all-page_wrapper">
+        <main>
+            <div class="body-counter">
+                <div class="retreat"></div>
+                <div class="body-content">
+                    <div class="add-count">
+                        <h1 class="h1_count">Рахунки</h1>
+                        <div class="plus_button">
+                            <button type="button" class="ui circular fluid primary button">＋&nbsp;Додати</button>
+                        </div>
+                        <div class>
+                            <div class="search"></div>
+                            <div class="sort"></div>
+                        </div>
+                    </div>
+                    <div class="see-cont">
+                        <div class="count-body">
+                            <div class="count-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cash-summary-box">
+                <div class="cash-summary-body">
+                    <div class="cash-summary-body-wrap">
+                        <div class="icon-square-box">
+                            <div class="icon-square" style="background-color: rgb(255, 179, 0); width: 35px; height: 35px; font-size: 35px; border-radius: 6px;">
+                                <span class="account-icon account-icon-cash"></span>
+                            </div>
+                        </div>
+                        <div class="cash-summary-text">
+                            <span>Готівка</span>
+                        </div>
+                        <div class="cash-summary-text-view">Готівка</div>
+                        <div class="cash-summary-liner-barrier"></div>
+                        <div class="cash-summary">
+                            <span class=""><a href="/detail_card">5000,00&nbsp;грн</a></span>
+                        </div>
+                        <div class="z-index"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

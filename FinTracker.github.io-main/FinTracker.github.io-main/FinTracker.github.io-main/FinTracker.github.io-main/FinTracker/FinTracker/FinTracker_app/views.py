@@ -16,6 +16,12 @@ def login_user(request):
 def logout(request):
     return render(request, 'logout.html')
 
+def count(request):
+    return render(request, 'count.html')
+
+def detail_card(request):
+    return render(request, 'detail_card.html')
+
 def register(request):
     islogin = request.user.is_authenticated
     err = ''

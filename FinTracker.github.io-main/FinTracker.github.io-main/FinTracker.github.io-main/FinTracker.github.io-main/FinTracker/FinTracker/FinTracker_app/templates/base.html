@@ -10,34 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="{% static 'js/main-3.js' %}" defer></script>
+    <script async defer src="{% static 'js/main8.js' %}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
     
-    <link type="text/css" rel="stylesheet" href="{% static 'css/main_1.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main8.css'%}">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style_1.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/count3.css'%}">
     {% block title%}
         <title>FinTracker</title>
     {% endblock %}
 </head>
-<body id="body">
+<body class="body" id="body">
     <div class="navbar">
         <ul class="header-navigation__list navigation__list">
             <img class="Logo" src="/static/image/Logo.png" alt="FinTracker Logo">
-            <h1 class="h1">FinTracker</h1>
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="/main">Головна Панель</a>
+                <a class="header-navigation__link navigation__link" href="/">FinTracker</a>
             </li>
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Рахунки</a>
+                <a class="header-navigation__link navigation__link" href="/">Головна панель</a>
+            </li>
+            <li class="header-navigation__item navigation__item">
+                <a class="header-navigation__link navigation__link" href="/count">Рахунки</a>
             </li>
             <li class="header-navigation__item navigation__item">
                 <a class="header-navigation__link navigation__link" href="#">Записи</a>
             </li>
             <li class="header-navigation__item navigation__item">
                 <a class="header-navigation__link navigation__link" href="#">Аналітика</a>
-            </li>
-            <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Інвестиції</a>
             </li>
             <li class="header-navigation__item navigation__item">
                 <a class="header-navigation__link navigation__link" href="#">Імпорти</a>
@@ -67,7 +68,7 @@
     </div>
     <div class="calendar">
         <div class="header" id="header">
-            <button id="prevBtn">
+            <button id="prevBtn" class="prevBtn">
                 <i class="fa fa-chevron-left"></i>
             </button>
             <div class="monthYear" id="monthYear"></div>
@@ -86,49 +87,223 @@
             </div>
             <div class="dates" id="dates"></div>
     </div>
-    <div>
-        <div class="main-schedule">
-            <div class="schedule_1">
-                <div class="main_settings">
-                    <div class="schedule_header"></div>
-                    <div class="schedule_delete"></div>
-                    <div class="schedule_main">
-                        <div class="main_panel">
-                            <h2>Головна панель</h2>
+    <div id="popup" class="popup non-visible">
+        <div id="ui" class="ui large modal transition non-visible">
+        <div class="header_conatiner">
+            Додати рахунок
+            <span id="close_button"><img src="/static/image/close-icon.png" class="close_button" alt="Close button from window"></span>
+        </div>
+        <div class="content_conatiner">
+            <div class="main_modal_choose">
+                <div class="main_modal_separator">
+                    <div class="bank_synchronization-card">
+                        <div class="bank_synchronization-card_image"></div>
+                        <h3 class="h3_modal">Синхронізація банку</h3>
+                        <p>Підключайте свої банківські рахунки і автоматично синхронізовуйте транзакції.</p>
+                    </div>
+                    <div class="import-card">
+                        <div class="import-card_image"></div>
+                        <h3 class="h3_modal">Імпорт</h3>
+                        <p>Завантажуйте свою історію транзакцій, імпортуючи CSV, Excel, OFX та інші файли.</p>
+                    </div>
+                    <div class="manual_imput-card">
+                        <div class="manual_imput-card_image"></div>
+                        <h3 class="h3_modal">Ручний ввід</h3>
+                        <p>Оновлюйте свій рахунок вручну. Ви можете підключити свій банк або імпортувати дані пізніше. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="ui" class="ui small modal transition ">
+        <div class="header_conatiner">
+            Додати рахунок
+            <span id="close_button"><img src="/static/image/close-icon.png" class="close_button" alt="Close button from window"></span>
+        </div>
+        <div class="content_conatiner">
+            <div class="add-acount-form">
+                <div class="content-panel">
+                    <form class="ui error form ">
+                        <div class="field">
+                            <div class="fields">
+                                <div class="eleven wide field">
+                                    <label>Ім'я</label>
+                                    <div class="ui input ">
+                                        <input aria-invalid="true" name="name" placeholder="Назва рахунку" maxlength="50" type="text" value="">
+                                    </div>
+                                </div>
+
+                                <div class="five wide field small-select">
+                                    <label>Колір</label>
+                                    <div class="ui selection dropdown">
+                                        <div class="color-inner" style="background: rgb(46, 125, 50);"></div>
+                                        DROP ICON
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel_body">
-                            <div class="main_speedometers">
-                                <div class="speedometer_1">
-                                    <div class="speedometer_body_1">
-                                         <div class="speedometr_arrow_1"></div>
+                        <div class="field">
+                            <div class="fields"></div>
+                        </div>
+                        <div class="field">
+                            <div class="fields"></div>
+                        </div>
+                        <div class="connect"></div>
+                        <div class="field submit"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+     <!-- <div id="box-plot-main" class="box-plot-main">
+        <div class="box-plot-wrapper">
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="box-plot-card-moving"></div>
+                        <div class="box-plot-card-delete">
+                            <div role="listbox" aria-expanded="false" class="ui basic dropdown" tabindex="0">
+                                <div class="text" role="alert" aria-live="polite" aria-atomic="true"> </div>
+                                <img class="ellipsis vertical icon" src="/static/image/ellipsis.png" alt="">
+                                <div class="left menu transition">
+                                    <div role="option" aria-checked="false" aria-selected="true" class="selected item" style="pointer-events: all;">
+                                    <span class="text">Видалити з головної панелі</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-plot-card-body">
+                        <div class="box-plot-card-main-panel">
+                            <h2 class="pannel">Головна панель</h2>
+                        </div>
+                         <div class="box-plot-card-spidometr_wrapper">
+                            <div class="box-plot-card-spidometr-1_separator box-plot-card_class">
+                                <div class="spidometr-1">
+                                    <div class="spidometr-1_body body_class" style="font-size: 100px;">
+                                        <div class="spidometr-1-arrow" style="transform: rotate(45deg);"></div>
                                     </div>
-                                    <div class="speedometer_balance_1">
-                                        <span>Баланс</span>
-                                        <span class="span_money_balance">
-                                            <span>500</span>
-                                        </span>
+                                    <div class="spidometr-1_balance">
+                                        <span class="balance">Баланс</span>
+                                    </div>
+                                    <span class="number">500</span>
+                                </div>
+                                <div class="spidometr-2">
+                                    <div class="spidometr-2_body body-2_class" style="font-size: 100px;">
+                                        <div class="spidometr-2-arrow" style="transform: rotate(-90deg);"></div>
+                                    </div>
+                                    <div class="spidometr-2_cash_flow">
+                                        <span class="cash_flow">Грошовий потік</span>
+                                    </div>
+                                    <span class="number_2">0</span>
+                                </div>
+                                <div class="spidometr-3">
+                                    <div class="spidometr-3_body body-3_class" style="font-size: 100px;">
+                                        <div class="spidometr-3-arrow" style="transform: rotate(-90deg);"></div>
+                                    </div>
+                                    <div class="spidometr-3_costs">
+                                        <span class="costs">Витрати</span>
+                                    </div>
+                                    <span class="number_3">0</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    </div>
+
+            </div>
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="box-plot-card-moving"></div>
+                        <div class="box-plot-card-delete">
+                            <div role="listbox" aria-expanded="false" class="ui basic dropdown" tabindex="0">
+                                <div class="text" role="alert" aria-live="polite" aria-atomic="true"> </div>
+                                <img class="ellipsis vertical icon" src="/static/image/ellipsis.png" alt="">
+                                <div class="left menu transition">
+                                    <div role="option" aria-checked="false" aria-selected="true" class="selected item" style="pointer-events: all;">
+                                    <span class="text">Видалити з головної панелі</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-plot-card-body">
+                        <div class="box-plot-card-main-panel">
+                            <h2 class="pannel">Тенденції змін залишку</h2>
+                        </div>
+                    </div>
+
+                    <div class="budget-progress-bar-news-wrapper">
+                        <div class="budget-progress-bar-news progress-bar">
+                            <div class="budget-progress-bar-news-text_day">Сьогодні</div>
+                            <div class="budget-progress-bar-news-text_in-accordance">в порівняні з поперднім періодом</div>
+                        </div>
+                        <div class=" budget-progress-bar-news budget-progress-bar-summary-analitics">
+                            <div class="budget-progress-bar-summary-money">
+                                <span>5000,00&nbsp;грн</span>
+                            </div>
+                            <div class="budget-progress-bar-summary-percent">
+                                <span class="percentage-change">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-progress-bar">
+                        <div class="chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="box-plot-card-moving"></div>
+                        <div class="box-plot-card-delete">
+                            <div role="listbox" aria-expanded="false" class="ui basic dropdown" tabindex="0">
+                                <div class="text" role="alert" aria-live="polite" aria-atomic="true"> </div>
+                                <img class="ellipsis vertical icon" src="/static/image/ellipsis.png" alt="">
+                                <div class="left menu transition">
+                                    <div role="option" aria-checked="false" aria-selected="true" class="selected item" style="pointer-events: all;">
+                                    <span class="text">Видалити з головної панелі</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-plot-card-body">
+                        <div class="box-plot-card-main-panel">
+                            <h2 class="pannel">Грошовий потік</h2>
+                        </div>
+                    </div>
+
+                    <div class="budget-progress-bar-news-wrapper">
+                        <div class="budget-progress-bar-news progress-bar">
+                            <div class="budget-progress-bar-news-text_day">Цього дня</div>
+                        </div>
+                        <div class=" budget-progress-bar-news budget-progress-bar-summary-analitics">
+                            <div class="budget-progress-bar-summary-money">
+                                <span>0,00&nbsp;грн</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-progress-bar">
+                        <div class="budget-progress-bar-scale-box">
+                            <div class="budget-progress-bar-scale">
+                                <div class="budget-progress-bar-scale-wrapper scale-wrapper">
+                                    <span class="income">Дохід</span>
+                                    <span class="profit">0,00&nbsp;грн</span>
+                                </div>
+                                <div class="budget-progress-bar-news bar_wrapper">
+                                    <div class="scale">
+                                        <div class="point_scale" style="width: 0%;"></div>
                                     </div>
                                 </div>
-                                <div class="speedometer_2">
-                                    <div class="speedometer_body_2">
-                                        <div class="speedometr_arrow_2"></div>
-                                    </div>
-                                    <div class="speedometer_balance_2">
-                                        <span>Грошовий потік</span>
-                                        <span class="span_money_flow">
-                                            <span>0</span>
-                                        </span>
-                                    </div>
+                            </div>
+                            <div class="budget-progress-bar-scale">
+                                <div class="budget-progress-bar-scale-wrapper scale-wrapper">
+                                    <span class="income">Витрати</span>
+                                    <span class="profit">-0,00&nbsp;грн</span>
                                 </div>
-                                <div class="speedometer_3">
-                                    <div class="speedometer_body_3">
-                                        <div class="speedometr_arrow_3"></div>
-                                    </div>
-                                    <div class="speedometer_balance_3">
-                                        <span>Витрати</span>
-                                        <span class="span_money_costs">
-                                            <span>0</span>
-                                        </span> 
+                                <div class="budget-progress-bar-news bar_wrapper">
+                                    <div class="scale">
+                                        <div class="point_scale" style="width: 0%;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +311,69 @@
                     </div>
                 </div>
             </div>
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="box-plot-card-moving"></div>
+                        <div class="box-plot-card-delete">
+                            <div role="listbox" aria-expanded="false" class="ui basic dropdown" tabindex="0">
+                                <div class="text" role="alert" aria-live="polite" aria-atomic="true"> </div>
+                                <img class="ellipsis vertical icon" src="/static/image/ellipsis.png" alt="">
+                                <div class="left menu transition">
+                                    <div role="option" aria-checked="false" aria-selected="true" class="selected item" style="pointer-events: all;">
+                                    <span class="text">Видалити з головної панелі</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-plot-card-body">
+                        <div class="box-plot-card-main-panel">
+                            <h2 class="pannel">Структура витрат</h2>
+                        </div>
+                    </div>
+
+                    <div class="expense_records_wrapper">
+                        <div class="cost_icon cost"></div>
+                        <div class="expense_records-text">В обраному періоді даних немає.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="box-plot-card-moving"></div>
+                        <div class="box-plot-card-delete">
+                            <div role="listbox" aria-expanded="false" class="ui basic dropdown" tabindex="0">
+                                <div class="text" role="alert" aria-live="polite" aria-atomic="true"> </div>
+                                <img class="ellipsis vertical icon" src="/static/image/ellipsis.png" alt="">
+                                <div class="left menu transition">
+                                    <div role="option" aria-checked="false" aria-selected="true" class="selected item" style="pointer-events: all;">
+                                    <span class="text">Видалити з головної панелі</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-plot-card-body">
+                        <div class="box-plot-card-main-panel">
+                            <h2 class="pannel">Останні записи</h2>
+                        </div>
+                    </div>
+
+                    <div class="expense_records_wrapper">
+                        <div class="edit_icon cost"></div>
+                        <div class="expense_records-text">В обраному періоді даних немає.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-plot-card">
+                <div class="box-plot-card-main_wrapper">
+                    <div class="add-card-gift-body">
+                        <div class="plus_button_gift"></div>
+                        Додати картку
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>  -->
     {% endblock %}
     
 </body>

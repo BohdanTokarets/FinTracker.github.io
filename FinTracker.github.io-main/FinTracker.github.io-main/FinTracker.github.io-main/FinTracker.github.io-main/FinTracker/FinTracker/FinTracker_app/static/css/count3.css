@@ -1,0 +1,364 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+
+  :root{
+    --white: #fff;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    min-width: 320px;
+  }
+
+  body{
+    line-height: 1;
+    font-size: 1rem;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color .4s, color .4s;
+  }
+  
+  input,
+  button,
+  textarea {
+    font-size: inherit;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+  a:link,a:visited {
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: none;
+  }
+ul,ol,li {
+    list-style: none;
+  }
+img {
+    vertical-align: top;
+  }
+  
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    line-height: 1;
+  }
+.Logo{
+  height: 80px;
+  width: 80px;
+  margin-right: .5rem;
+}
+
+.h1{
+  margin-right: 30px;
+}
+
+/*NAVIGATION*/
+.navbar{
+  background-color: #ebe8e8;
+  border: 1px solid #000000;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__list {
+  display: flex;
+  margin-right: 110px;
+  align-items: center;
+}
+
+.header__pictures{
+  cursor: pointer;
+}
+
+/*not(:last-child) = останній елемент не включається в задані параметри*/
+
+.navigation__item:not(:last-child){
+  margin-right: 50px;
+}
+
+.navigation__link{
+  position: relative;
+  font-size: 16px;
+  color: black;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+}
+
+.navigation__link::before{
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -50%;
+  left: 10%;
+}
+.navigation__link:hover:before{
+  opacity: 1;
+}
+
+.navigation__link:hover{
+  color: #ac8181;
+}
+
+.register_button{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: color 0.3s ease-in-out;
+}
+
+.register_button:hover{
+  color: #ac8181;
+}
+
+.all-page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-page_wrapper{
+  background-color: #eff0f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-page_wrapper main{
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1366px;
+  min-width: 1150px;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.body-counter{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.body-counter .retreat{
+  align-items: center;
+  display: flex;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.body-counter .body-content{
+  display: flex;
+}
+
+.body-counter .body-content .add-count{
+  width: 20%;
+  flex: 0 0 auto;
+  background-color: #fafbfc;
+  border-radius: 6px;
+  padding: 1.7rem 0;
+}
+
+.body-counter .body-content .add-count>h1{
+  padding: 0 1.7rem;
+  margin-bottom: 1.2rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: #354052;
+}
+
+.h1_count{
+  margin-top: 0;
+  min-height: 1rem;
+  font-size: 2rem;
+  line-height: 1.28571429em;
+  margin: calc(2rem - .14286em) 0 1rem;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+}
+
+.body-counter .body-content .add-count .plus_button{
+  padding: .5rem 1.7rem;
+}
+
+.ui.primary.button {
+  box-shadow: inset 0 0 0 0 #ccd2db;
+}
+
+.ui.primary.button, .ui.primary.buttons .button {
+  background-color: #00aa70;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+
+.ui.fluid.button {
+  display: block;
+}
+
+.ui.fluid.button, .ui.fluid.buttons {
+  width: 100%;
+}
+
+.ui.circular.button {
+  border-radius: 10em;
+}
+
+.ui.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: none;
+  border: none;
+  vertical-align: baseline;
+  background: #e0e1e2 none;
+  color: rgba(0, 0, 0, .6);
+  font-family: Roboto, sans-serif;
+  margin: 0 .25em 0 0;
+  padding: .78571429em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 400;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+  will-change: "";
+  -webkit-tap-highlight-color: transparent;
+}
+
+.all-page .all-page_wrapper.cash-summary-box{
+  width: 80%;
+  flex: 0 0 auto;
+  padding-left: 1.2rem;
+}
+
+.all-page .all-page_wrapper>div{
+  min-height: calc(100vh - 8rem - 75px);
+}
+
+.cash-summary-box{
+  overflow: visible !important;
+  border-radius: unset !important;
+}
+
+.cash-summary-body-wrap {
+  margin-bottom: 1rem;
+  border: 1px solid #e5e9ed;
+  padding: 1.2rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  color: #354052;
+  border-radius: 6px;
+  transition: box-shadow .2s;
+  cursor: pointer;
+}
+
+.body-wrap{
+  position: relative;
+}
+
+.icon-square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  line-height: 1em;
+  border-radius: 5px;
+  font-size: 34px;
+}
+
+.icon-square-box{
+  margin-right: 1rem;
+}
+
+.icon-square>span {
+  font-size: .8em;
+  width: .75em;
+  height: .75em;
+}
+
+.account-icon-cash {
+  background: url(/static/image/money.png) no-repeat 50% / contain;
+}
+
+.cash-summary-text{
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .1px;
+  color: #354052;
+  width: 16rem;
+  margin-right: 2rem;
+}
+
+.cash-summary-text-view{
+  width: 15rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.14;
+  color: #7f8fa4;
+}
+
+.cash-summary-liner-barrier{
+  width: 20rem;
+  display: flex;
+  align-items: center;
+}
+
+.cash-summary{
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 500;
+  color: #354052;
+  text-align: right;
+}
+
+main{
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1366px;
+  min-width: 1150px;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.cash-summary-box{
+  width: 80%;
+  flex: 0 0 auto;
+  padding-left: 1.2rem;
+}
